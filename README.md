@@ -1,4 +1,8 @@
 # QuizNight-App
-This is some information
 
-Another test
+
+# Client Side
+
+
+
+# Server Side
