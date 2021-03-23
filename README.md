@@ -1,4 +1,4 @@
-# Neebers Quiz Night - Web App
+# QuizNight-App
 **This is an an Application designed to run an online or in-person trivia night.**
 *Designed by Anthony Glynn*
 

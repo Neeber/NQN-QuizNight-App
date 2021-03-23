@@ -1,8 +1,8 @@
 {
-  "name": "QuizNight-App",
+  "name": "NQN-WebApp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "watch": "nodemon"
   },
@@ -19,8 +19,10 @@
   "homepage": "https://github.com/Neeber/QuizNight-App#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "mongodb": "^3.6.5",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.2",
     "nodemon": "^2.0.7"
   }
 }
