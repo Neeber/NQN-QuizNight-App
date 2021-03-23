@@ -14,9 +14,8 @@ app.use(express.urlencoded({ extended: false }))
 
 
 app.get('/', (req, res) => {
-    res.render('quizzes/answers')
+    res.render('index')
 })
-
 
 //Tell Express where the /Quizzes Router is and use it
 app.use('/quizzes', quizRouter)
