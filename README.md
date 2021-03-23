@@ -15,7 +15,8 @@ Can lock answer sheets
 - [ ] Submit Answers
 - [ ] Start Quizzes
 - [ ] Lock Rounds
-- [ ] Create Database (JSON)
+- [ ] Create Database (MongoDB)
+- [ ] Setup Basic Navigation
 
 ### Documentation to remember
 Bootstrap Doc - https://getbootstrap.com/docs/4.0/getting-started/introduction/
