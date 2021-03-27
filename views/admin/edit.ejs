@@ -22,22 +22,6 @@
             <%- include('_new_quiz_form') %>
         </form>
         
-        <% quizzes.forEach(quiz => { %>
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h4><%= quiz.quizName %></h4>
-                    <div><%= quiz.createdAt.toLocaleDateString() %></div>
-                    <div>Quiz Id: <%= quiz.id %></div>
-
-                    <a href="/admin/edit/<%= quiz.id %>?_method=PUT" class="btn btn-outline-success">Edit</a>
-                    <form action="/admin/<%= quiz.id %>?_method=DELETE" class="d-inline" method="POST">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
-                </div>
-            </div>
-        <% }) %>
-
-
     </div>
     
 </body>

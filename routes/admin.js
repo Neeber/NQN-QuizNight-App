@@ -10,6 +10,10 @@ adminRouter.get('/', async (req, res) => {
     res.render('admin/panel', { quizzes: quizzes })
 })
 
+adminRouter.put('/:id', (req, res) => {
+
+})
+
 adminRouter.delete('/:id', async (req, res) => {
     await Quiz.findByIdAndDelete(req.params.id)
     res.redirect('/admin')
@@ -25,12 +29,10 @@ adminRouter.post('/', async (req, res) => {
         quiz = await quiz.save()
         console.log(`Created a new quiz`)
         res.redirect(`/admin`)
-
     } catch (e) {
-        console.log('Found an Error BITCH!!!\n')
         console.log(e)
     }
-
 })
+
 
 module.exports = adminRouter

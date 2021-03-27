@@ -1,5 +1,6 @@
 # QuizNight-App
 **This is an an Application designed to run an online or in-person trivia night.**
+
 *Designed by Anthony Glynn*
 
 ## Client Side
@@ -17,6 +18,9 @@ Can lock answer sheets
 - [ ] Lock Rounds
 - [x] Create Database (MongoDB)
 - [ ] Setup Basic Navigation
+- [ ] Admin Panel - Edit Quiz Entries
+- [ ] Admin Panel - Table view for Quizzes
+- [ ] MongoDb - Quizzes Update
 
 ### Documentation to remember
 Bootstrap Doc - https://getbootstrap.com/docs/4.0/getting-started/introduction/
