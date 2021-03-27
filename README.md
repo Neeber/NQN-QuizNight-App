@@ -15,7 +15,7 @@ Can lock answer sheets
 - [ ] Submit Answers
 - [ ] Start Quizzes
 - [ ] Lock Rounds
-- [ ] Create Database (MongoDB)
+- [x] Create Database (MongoDB)
 - [ ] Setup Basic Navigation
 
 ### Documentation to remember
