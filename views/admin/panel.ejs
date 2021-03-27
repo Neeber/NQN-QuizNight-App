@@ -16,14 +16,19 @@
     <div class="container">
         <h1>Admin Panel</h1>
 
-        <h3>Create a New Quiz</h3>
+        <h4>Create a New Quiz</h4>
         
-        <form action="/admin" method="POST">
-            <%- include('_new_quiz_form') %>
-        </form>
+        <div class="card mb-4">
+            <div class="card-body">
+                <form action="/admin" method="POST">
+                    <%- include('_new_quiz_form') %>
+                </form>
+            </div>
+        </div>
         
+        <h4>List of All Quizzes</h4>
         <% quizzes.forEach(quiz => { %>
-            <div class="card mt-4">
+            <div class="card mb-2">
                 <div class="card-body">
                     <h4><%= quiz.quizName %></h4>
                     <div><%= quiz.createdAt.toLocaleDateString() %></div>
