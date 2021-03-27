@@ -15,6 +15,27 @@
 <body>
     <div class="container">
         <h1>Admin Panel</h1>
+
+        <h3>Create a New Quiz</h3>
+        
+        <form action="/admin" method="POST">
+            <%- include('_new_quiz_form') %>
+        </form>
+        
+        <% quizzes.forEach(quiz => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4><%= quiz.quizName %></h4>
+                    <div><%= quiz.createdAt.toLocaleDateString() %></div>
+                    <div>Quiz Id: <%= quiz.id %></div>
+                    <form action="/admin/<%= quiz.id %>?_method=DELETE" class="d-inline" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+
+
     </div>
     
 </body>

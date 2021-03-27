@@ -1,8 +1,36 @@
 const express = require('express')
 const adminRouter = express.Router()
+const Quiz = require('../models/quiz')
+const methodOverride = require('method-override')
 
-adminRouter.get('/', (req, res) => {
-    res.render('admin/panel')
+adminRouter.use(methodOverride('_method'))
+
+adminRouter.get('/', async (req, res) => {
+    const quizzes = await Quiz.find().sort({ createdAt: 'desc' })
+    res.render('admin/panel', { quizzes: quizzes })
+})
+
+adminRouter.delete('/:id', async (req, res) => {
+    await Quiz.findByIdAndDelete(req.params.id)
+    res.redirect('/admin')
+})
+
+adminRouter.post('/', async (req, res) => {
+    
+    let quiz = new Quiz({
+        quizName: req.body.quizName
+    })
+
+    try {
+        quiz = await quiz.save()
+        console.log(`Created a new quiz`)
+        res.redirect(`/admin`)
+
+    } catch (e) {
+        console.log('Found an Error BITCH!!!\n')
+        console.log(e)
+    }
+
 })
 
 module.exports = adminRouter
