@@ -22,7 +22,10 @@ adminRouter.delete('/:id', async (req, res) => {
 adminRouter.post('/', async (req, res) => {
     
     let quiz = new Quiz({
-        quizName: req.body.quizName
+        quizName: req.body.quizName,
+        quizDate: req.body.quizDate,
+        starttime: req.body.starttime,
+        quizRound: req.body.quizRounds
     })
 
     try {

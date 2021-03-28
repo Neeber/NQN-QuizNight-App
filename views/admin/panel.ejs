@@ -31,10 +31,13 @@
             <div class="card mb-2">
                 <div class="card-body">
                     <h4><%= quiz.quizName %></h4>
-                    <div><%= quiz.createdAt.toLocaleDateString() %></div>
-                    <div>Quiz Id: <%= quiz.id %></div>
+                    <div><strong>Quiz Id:</strong> <%= quiz.id %></div><br/>
+                    <div><strong>Created At:</strong><%= quiz.createdAt.toLocaleDateString() %></div>
+                    <div><strong>Quiz Date:</strong> <%= quiz.quizDate %></div>
+                    <div><strong>Quiz Rounds:</strong> <%= quiz.quizRounds %></div>
+                    <div><strong>Start Time:</strong> <%= quiz.starttime %></div>
 
-                    <a href="/admin/edit/<%= quiz.id %>?_method=PUT" class="btn btn-outline-success">Edit</a>
+                    <!--<a href="/admin/edit/<%= quiz.id %>?_method=PUT" class="btn btn-outline-success">Edit</a>-->
                     <form action="/admin/<%= quiz.id %>?_method=DELETE" class="d-inline" method="POST">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
