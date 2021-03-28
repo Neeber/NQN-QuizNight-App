@@ -6,12 +6,14 @@ const methodOverride = require('method-override')
 adminRouter.use(methodOverride('_method'))
 
 adminRouter.get('/', async (req, res) => {
+    const quiz = new Quiz
     const quizzes = await Quiz.find().sort({ createdAt: 'desc' })
-    res.render('admin/panel', { quizzes: quizzes })
+    res.render('admin/panel', { quizzes: quizzes, quiz: quiz })
 })
 
-adminRouter.put('/:id', (req, res) => {
-
+adminRouter.get('/:id', async (req, res) =>{
+    const quiz = await Quiz.findById(req.params.id)
+    res.render('admin/edit', { quiz: quiz })
 })
 
 adminRouter.delete('/:id', async (req, res) => {
@@ -19,23 +21,35 @@ adminRouter.delete('/:id', async (req, res) => {
     res.redirect('/admin')
 })
 
-adminRouter.post('/', async (req, res) => {
-    
-    let quiz = new Quiz({
-        quizName: req.body.quizName,
-        quizDate: req.body.quizDate,
-        starttime: req.body.starttime,
-        quizRound: req.body.quizRounds
-    })
+adminRouter.put('/:id', async (req, res, next) => {
+    req.quiz = await Quiz.findById(req.params.id)
+    next()
+}, saveArticleAndRedirect('edit'))
 
-    try {
-        quiz = await quiz.save()
-        console.log(`Created a new quiz`)
-        res.redirect(`/admin`)
-    } catch (e) {
-        console.log(e)
+adminRouter.post('/', async (req, res, next) => {
+    req.quiz = new Quiz()
+    next()
+}, saveArticleAndRedirect('new'))
+
+function saveArticleAndRedirect(path) {
+    return async (req, res) => {
+        
+        let quiz = req.quiz
+
+        quiz.quizName = req.body.quizName
+        quiz.quizDate = req.body.quizDate
+        quiz.starttime = req.body.starttime
+        quiz.quizRounds = req.body.quizRounds
+
+        try {
+            quiz = await quiz.save()
+            res.redirect(`/admin`)
+        } catch (e) {
+            console.log(e)
+            res.render(`/admin/edit`, { quiz: quiz })
+        }
     }
-})
+}
 
 
 module.exports = adminRouter

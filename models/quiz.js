@@ -13,7 +13,6 @@ const quizSchema =  new mongoose.Schema({
     quizRounds: {
         type: Number,
         required: true,
-        default: "5"
     },
     starttime: {
         type: String,
@@ -22,7 +21,11 @@ const quizSchema =  new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
+    },
+    status: {
+        type: String
     }
+        
 })
 
 module.exports = mongoose.model('Quiz', quizSchema)

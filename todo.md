@@ -4,10 +4,11 @@
 - [ ] Lock Rounds
 - [x] Create Database (MongoDB)
 - [x] Setup Basic Navigation
-- [ ] Admin Panel - Edit Quiz Entries
+- [x] Admin Panel - Edit Quiz Entries
 - [ ] Admin Panel - Table view for Quizzes
-- [ ] MongoDB - Quizzes Update
-- [ ] MongoDB - Rounds default, over taking other input
+- [x] Admin Panel - Pre-fill Date for Edit (Date Needs reformatting to YYYY-MM-DD)
+- [x] MongoDB - Quizzes Update
+- [x] MongoDB - Rounds default, over taking other input
 
 ### Client Side
 

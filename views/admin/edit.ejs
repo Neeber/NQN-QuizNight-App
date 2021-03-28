@@ -16,11 +16,15 @@
     <div class="container">
         <h1>Admin Panel</h1>
 
-        <h3>Create a New Quiz</h3>
-        
-        <form action="/admin" method="POST">
-            <%- include('_new_quiz_form') %>
-        </form>
+        <h3>Edit a New Quiz</h3>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <form action="/admin/<%= quiz.id %>?_method=PUT" method="POST">
+                    <%- include('_quiz_form') %>
+                </form>
+            </div>
+        </div>
         
     </div>
     

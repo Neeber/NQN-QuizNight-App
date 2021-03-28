@@ -17,11 +17,11 @@
         <h1>Admin Panel</h1>
 
         <h4>Create a New Quiz</h4>
-        
+
         <div class="card mb-4">
             <div class="card-body">
                 <form action="/admin" method="POST">
-                    <%- include('_new_quiz_form') %>
+                    <%- include('_quiz_form') %>
                 </form>
             </div>
         </div>
@@ -32,15 +32,17 @@
                 <div class="card-body">
                     <h4><%= quiz.quizName %></h4>
                     <div><strong>Quiz Id:</strong> <%= quiz.id %></div><br/>
-                    <div><strong>Created At:</strong><%= quiz.createdAt.toLocaleDateString() %></div>
-                    <div><strong>Quiz Date:</strong> <%= quiz.quizDate %></div>
+                    <div><strong>Created At:</strong> <%= quiz.createdAt.toLocaleDateString() %></div>
+                    <div><strong>Quiz Date:</strong> <%= quiz.quizDate.toLocaleDateString() %></div>
                     <div><strong>Quiz Rounds:</strong> <%= quiz.quizRounds %></div>
                     <div><strong>Start Time:</strong> <%= quiz.starttime %></div>
 
-                    <!--<a href="/admin/edit/<%= quiz.id %>?_method=PUT" class="btn btn-outline-success">Edit</a>-->
-                    <form action="/admin/<%= quiz.id %>?_method=DELETE" class="d-inline" method="POST">
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+                    <div class="mt-2">
+                        <a href="/admin/<%= quiz.id %>" class="btn btn-outline-success">Edit</a>
+                        <form action="/admin/<%= quiz.id %>?_method=DELETE" class="d-inline" method="POST">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         <% }) %>
