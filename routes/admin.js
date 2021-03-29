@@ -40,6 +40,7 @@ function saveArticleAndRedirect(path) {
         quiz.quizDate = req.body.quizDate
         quiz.starttime = req.body.starttime
         quiz.quizRounds = req.body.quizRounds
+        quiz.quizStatus = req.body.quizStatus
 
         try {
             quiz = await quiz.save()
@@ -50,6 +51,5 @@ function saveArticleAndRedirect(path) {
         }
     }
 }
-
 
 module.exports = adminRouter

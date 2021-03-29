@@ -22,10 +22,9 @@ const quizSchema =  new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    status: {
-        type: String
-    }
-        
+    quizStatus: {
+        type: String,
+    } 
 })
 
 module.exports = mongoose.model('Quiz', quizSchema)

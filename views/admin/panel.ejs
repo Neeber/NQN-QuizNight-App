@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h1>Admin Panel</h1>
-
+        
         <h4>Create a New Quiz</h4>
 
         <div class="card mb-4">
@@ -31,11 +31,12 @@
             <div class="card mb-2">
                 <div class="card-body">
                     <h4><%= quiz.quizName %></h4>
-                    <div><strong>Quiz Id:</strong> <%= quiz.id %></div><br/>
-                    <div><strong>Created At:</strong> <%= quiz.createdAt.toLocaleDateString() %></div>
+                    <div><strong>Quiz Id:</strong> <%= quiz.id %></div>
+                    <div><strong>Created At:</strong> <%= quiz.createdAt.toLocaleDateString() %></div><br/>
                     <div><strong>Quiz Date:</strong> <%= quiz.quizDate.toLocaleDateString() %></div>
                     <div><strong>Quiz Rounds:</strong> <%= quiz.quizRounds %></div>
                     <div><strong>Start Time:</strong> <%= quiz.starttime %></div>
+                    <div><strong>Status:</strong> <%= quiz.quizStatus %></div>
 
                     <div class="mt-2">
                         <a href="/admin/<%= quiz.id %>" class="btn btn-outline-success">Edit</a>
