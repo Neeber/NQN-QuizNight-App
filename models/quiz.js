@@ -23,7 +23,7 @@ const quizSchema =  new mongoose.Schema({
         default: Date.now
     },
     quizStatus: {
-        type: String,
+        type: String
     } 
 })
 

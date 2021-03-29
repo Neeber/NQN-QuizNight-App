@@ -23,6 +23,7 @@ adminRouter.delete('/:id', async (req, res) => {
 
 adminRouter.put('/:id', async (req, res, next) => {
     req.quiz = await Quiz.findById(req.params.id)
+    console.log(req.body.quizStatus)
     next()
 }, saveArticleAndRedirect('edit'))
 
@@ -40,8 +41,10 @@ function saveArticleAndRedirect(path) {
         quiz.quizDate = req.body.quizDate
         quiz.starttime = req.body.starttime
         quiz.quizRounds = req.body.quizRounds
+        
         quiz.quizStatus = req.body.quizStatus
 
+        
         try {
             quiz = await quiz.save()
             res.redirect(`/admin`)

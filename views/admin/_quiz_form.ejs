@@ -28,7 +28,12 @@
 
 <div class="form-group mb-2">
     <label for="quizStatus">Status</label>
-    <input required type="text" placeholder="Enter Quiz Status" value="<%= quiz.quizStatus %>" name="quizStatus" id="quizStatus" class="form-control">
+    <select id="quizStatus" class="form-control form-control">
+        <option value="New">New</option>
+        <option value="Registering">Registering</option>
+        <option value="Open">Open</option>
+        <option value="Finished">Finished</option>
+    </select>
 </div>
 
 <button type="submit" class="btn btn-primary">Save</button>
