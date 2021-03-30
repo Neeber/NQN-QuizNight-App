@@ -28,12 +28,12 @@
 
 <div class="form-group mb-2">
     <label for="quizStatus">Status</label>
-    <select id="quizStatus" class="form-control form-control">
-        <option value="New">New</option>
-        <option value="Registering">Registering</option>
-        <option value="Open">Open</option>
-        <option value="Finished">Finished</option>
-    </select>
+    <select id="quizStatus" name="quizStatus" class="form-control form-control">
+        <option <% if(quiz.quizStatus=="New"){ %>selected="selected" <% } %> value="New">New</option>
+        <option <% if(quiz.quizStatus=="Registering"){ %>selected="selected" <% } %>value="Registering">Registering</option>
+        <option <% if(quiz.quizStatus=="Open"){ %>selected="selected" <% } %>value="Open">Open</option>
+        <option <% if(quiz.quizStatus=="Finished"){ %>selected="selected" <% } %>value="Finished">Finished</option>
+    </select>    
 </div>
 
 <button type="submit" class="btn btn-primary">Save</button>

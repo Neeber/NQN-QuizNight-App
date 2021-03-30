@@ -12,7 +12,7 @@ const quizSchema =  new mongoose.Schema({
     },
     quizRounds: {
         type: Number,
-        required: true,
+        required: true
     },
     starttime: {
         type: String,
@@ -23,7 +23,8 @@ const quizSchema =  new mongoose.Schema({
         default: Date.now
     },
     quizStatus: {
-        type: String
+        type: String,
+        default: "New"
     } 
 })
 

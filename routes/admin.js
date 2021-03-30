@@ -23,7 +23,6 @@ adminRouter.delete('/:id', async (req, res) => {
 
 adminRouter.put('/:id', async (req, res, next) => {
     req.quiz = await Quiz.findById(req.params.id)
-    console.log(req.body.quizStatus)
     next()
 }, saveArticleAndRedirect('edit'))
 
@@ -32,7 +31,7 @@ adminRouter.post('/', async (req, res, next) => {
     next()
 }, saveArticleAndRedirect('new'))
 
-function saveArticleAndRedirect(path) {
+function saveArticleAndRedirect(Path) {
     return async (req, res) => {
         
         let quiz = req.quiz
@@ -41,16 +40,15 @@ function saveArticleAndRedirect(path) {
         quiz.quizDate = req.body.quizDate
         quiz.starttime = req.body.starttime
         quiz.quizRounds = req.body.quizRounds
-        
         quiz.quizStatus = req.body.quizStatus
-
         
         try {
             quiz = await quiz.save()
-            res.redirect(`/admin`)
+            res.redirect('/admin')
+            
         } catch (e) {
             console.log(e)
-            res.render(`/admin/edit`, { quiz: quiz })
+            
         }
     }
 }
