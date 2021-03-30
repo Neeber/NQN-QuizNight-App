@@ -25,7 +25,7 @@ const quizSchema =  new mongoose.Schema({
     quizStatus: {
         type: String,
         default: "New"
-    } 
+    }
 })
 
 module.exports = mongoose.model('Quiz', quizSchema)

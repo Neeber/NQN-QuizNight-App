@@ -8,7 +8,10 @@ adminRouter.use(methodOverride('_method'))
 adminRouter.get('/', async (req, res) => {
     const quiz = new Quiz
     const quizzes = await Quiz.find().sort({ createdAt: 'desc' })
-    res.render('admin/panel', { quizzes: quizzes, quiz: quiz })
+
+    let statusColour = ["#ff0000",  "#00cc00", "#0000ff", "#9900cc"]
+
+    res.render('admin/panel', { quizzes: quizzes, quiz: quiz, statusColour: statusColour})
 })
 
 adminRouter.get('/:id', async (req, res) =>{
